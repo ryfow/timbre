@@ -12,15 +12,14 @@
 
   :dependencies
   [[org.clojure/clojure "1.5.1"]
-   [com.taoensso/encore "2.26.0"]
-   ;; Version 0.1.18+ breaks Clojure 1.5 support, Ref. https://goo.gl/5xqVHH:
-   [io.aviso/pretty     "0.1.17"]]
+   [com.taoensso/encore "2.27.0"]
+   [io.aviso/pretty     "0.1.20"]]
 
   :plugins
   [[lein-pprint       "1.1.2"]
-   [lein-ancient      "0.6.7"]
+   [lein-ancient      "0.6.8"]
    [lein-expectations "0.0.8"]
-   [lein-autoexpect   "1.6.0"]
+   [lein-autoexpect   "1.7.0"]
    [codox             "0.8.13"]]
 
   :profiles
@@ -29,13 +28,13 @@
    :1.5  {:dependencies [[org.clojure/clojure "1.5.1"]]}
    :1.6  {:dependencies [[org.clojure/clojure "1.6.0"]]}
    :1.7  {:dependencies [[org.clojure/clojure "1.7.0"]]}
-   :1.8  {:dependencies [[org.clojure/clojure "1.8.0-alpha5"]]}
+   :1.8  {:dependencies [[org.clojure/clojure "1.8.0-RC3"]]}
    :test {:dependencies [[expectations              "2.1.0"]
                          [org.clojure/tools.logging "0.3.1"]
 
                          ;; Appender deps
-                         [com.taoensso/nippy   "2.9.1"]
-                         [com.taoensso/carmine "2.11.1"]
+                         [com.taoensso/nippy   "2.10.0"]
+                         [com.taoensso/carmine "2.12.1"]
                          [com.draines/postal   "1.11.4"]
                          [irclj                "0.5.0-alpha4"]]}
    :dev
