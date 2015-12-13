@@ -20,7 +20,7 @@
    [lein-ancient      "0.6.8"]
    [lein-expectations "0.0.8"]
    [lein-autoexpect   "1.7.0"]
-   [codox             "0.8.13"]]
+   [lein-codox        "0.9.0"]]
 
   :profiles
   {;; :default [:base :system :user :provided :dev]
@@ -70,12 +70,9 @@
   :auto-clean false
   :prep-tasks [["cljx" "once"] "javac" "compile"]
 
-  :codox {:language :clojure ; [:clojure :clojurescript] cljsbuild  ; No support?
-          :sources  ["target/classes"]
-          :src-linenum-anchor-prefix "L"
-          :src-dir-uri "http://github.com/ptaoussanis/timbre/blob/master/src/"
-          :src-uri-mapping {#"target/classes"
-                            #(.replaceFirst (str %) "(.cljs$|.clj$)" ".cljx")}}
+  :codox
+  {:language :clojure
+   :source-uri "https://github.com/ptaoussanis/timbre/blob/master/{filepath}#L{line}"}
 
   :aliases
   {"test-all"   ["do" "clean," "cljx" "once,"
